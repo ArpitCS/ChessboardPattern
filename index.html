@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ChessBoard Pattern</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+
+  <script>
+    function print(data) {
+      let label = document.createElement('label');
+      label.innerHTML = data;
+      document.body.appendChild(label);
+    }
+    
+    function newLine() {
+      let br = document.createElement('br');
+      document.body.appendChild(br);
+    }
+    
+    let board_size = 8;
+    
+    let tempVar = 1;
+    for (let i = 0; i < board_size; i++) {
+      let row = "";
+      for (let j = 0; j < board_size; j++) {
+        if (tempVar == 1) {
+          row += "* ";
+          tempVar--;
+        } else if (tempVar == 0) {
+          row += "# ";
+          tempVar++;
+        }
+      }
+      
+      print(row);
+      tempVar = tempVar === 1 ? 0 : 1;
+      newLine();
+    }
+  </script>
+</head>
+<body>
+  <h1>Chessboard Pattern by 2310991623</h1>
+</body>
+</html>
